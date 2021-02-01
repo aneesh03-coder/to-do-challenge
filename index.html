@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do App ✏</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rhodium+Libre&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cookie&family=El+Messiri:wght@600&family=Merriweather:ital,wght@1,300&family=Poppins&family=Sacramento&family=Ubuntu&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <i class="fa fa-list" aria-hidden="true"></i>
+    <div class="section">
+        <div class="todo__heading">
+            <h1 id="heading">My To-Do App</h1>
+            
+        </div>
+        <div class="todo__lists">
+            <div class="mylist">
+                <h2>Lists</h2>
+                
+                    <i class="fa fa-times" aria-hidden="true" ></i>
+                  
+                <div class="mylist__createNew">
+                    <span>Create New  <i class="fa fa-plus" aria-hidden="true"></i></span>
+                    <form action="" placeholder="Enter your list name and hit enter" class="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                        <input type="text" name="new__list__value" autocomplete="off">
+                    </form>
+                </div>
+                <div id="show__unique" style="display: none;color: white; ">
+                    <p>This list Name has already been taken.</p>
+                </div>
+                <div id="show__unique1" style="display: none;color: white; ">
+                    <p>Sorry Special characters not allowed</p>
+                </div>
+                <div class="list_section">
+                    <div class="list__collections">
+                                      
+                    </div>
+                    <div class="list_collections_filter">
+                        <div class="all__lists" id="all_lists">All</div>
+                        <div class="completed__tasks" id="completed__tasks">Completed</div>
+                        <div class="uncompleted__tasks" id="uncompleted__tasks">Uncompleted</div>
+                    </div>
+                </div>
+                 
+                               
+            </div>
+        </div>
+        <div class="leaflet__section">
+            <div class="leaflet">
+                <div class="leaflet__content">
+                    
+                </div>
+                <div class="leaflet__bottom"></div>            
+            </div>
+            <form action="" class="mobile__response">               
+                <input type="text" name="todos" placeholder="Enter your To-Do's" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            </form>
+            <div class="validity"  id="validity" style="display: none;color: white; ">
+                <h5>Sorry no special characters allowed</h5>
+            </div> 
+            <div class="congratulations"  id="congratulations" style="display: none;color: white; ">
+                <h4>Congratulations!! Your list is complete</h4>
+            </div> 
+            
+        </div>
+       
+       <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit List content</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="" onsubmit="editlistValue(event)">
+                  <h1 class="edit__listName"></h1>
+                  <input type="text" class="editedValue" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+              </form>
+              <div class="validity1"  id="validity1" style="display: none;color: white; ">
+                <h5>Sorry no special characters allowed</h5>
+            </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onclick="editlistValue(event)">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+
+  
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./main.js"></script>
+    
+    
+</body>
+</html>
